@@ -62,12 +62,11 @@ if dein#load_state('/home/pix/.cache/dein')
 	call dein#add('SirVer/ultisnips')
 	call dein#add('honza/vim-snippets')
 	call dein#add('kristijanhusak/defx-git')
-	call dein#add('kristijanhusak/defx-icon')
+	call dein#add('kristijanhusak/defx-icons')
 	call dein#add('voldikss/vim-floaterm')
 	call dein#add('liuchengxu/vim-clap')
 	call dein#add('hardcoreplayers/vim-buffet')
 	call dein#add('luochen1990/rainbow')
-
 	" defx
 	call dein#add('Shougo/defx.nvim')
 	if !has('nvim')
