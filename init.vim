@@ -1,5 +1,4 @@
 " ============常规设置=================
-set nu
 
 " 初始化leader键
 if has('vim_starting')
@@ -14,6 +13,7 @@ endif
 let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')),':h')
 " 加载通用配置
 call utils#source_file($VIM_PATH,'general.vim')
+call utils#source_file($VIM_PATH, 'filetype.vim')
 
 " ==============mapping=================
 inoremap <C-d> <ESC>ddi
