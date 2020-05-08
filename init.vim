@@ -15,7 +15,6 @@ let $VIM_PATH = fnamemodify(resolve(expand('<sfile>:p')),':h')
 " 加载通用配置
 call utils#source_file($VIM_PATH,'general.vim')
 
-
 " ==============mapping=================
 inoremap <C-d> <ESC>ddi
 inoremap <C-u> <ESC>vwU

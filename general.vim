@@ -76,3 +76,36 @@ set spellfile=$VIM_PATH/spell/en.utf-8.add
 
 " History saving
 set history=2000
+
+if has('nvim') && ! has('win32') && ! has('win64')
+	set shada=!,'300,<50,@100,s10,h
+else
+	set viminfo='300,<10,@50,h,n$DATA_PATH/viminfo
+endif
+
+augroup user_persistent_undo
+	autocmd!
+	au BufWritePre /tmp/*          setlocal noundofile
+	au BufWritePre COMMIT_EDITMSG  setlocal noundofile
+	au BufWritePre MERGE_MSG       setlocal noundofile
+	au BufWritePre *.tmp           setlocal noundofile
+	au BufWritePre *.bak           setlocal noundofile
+augroup END
+
+" If sudo, disable vim swap/backup/undo/shada/viminfo writin
+if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
+			\ && $HOME !=# expand('~'.$USER)
+			\ && $HOME ==# expand('~'.$SUDO_USER)
+
+	set noswapfile
+	set nobackup
+	set noundofile
+	if has('nvim')
+		set shada="NONE"
+	else
+		set viminfo="NONE"
+	endif
+endif
+
+" Secure sensitive information, disable backup files in temp directorie
+echo 'general.vim'
