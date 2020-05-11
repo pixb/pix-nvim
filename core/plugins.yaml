@@ -13,6 +13,10 @@
 - repo: neoclide/coc.nvim
   merge: 0
   rev: release
+  build: 'yarn install --frozen-lockfile'
+  hook_add: source $VIM_PATH/modules/module-coc.vim
+  hook_source: source $VIM_PATH/modules/module-lsp.vim
+
 
 - repo: liuchengxu/vim-which-key
   on_cmd: [ Whichkey, Whichkey! ]
@@ -33,9 +37,9 @@
 
 - repo: SirVer/ultisnips
   hook_add: |
-    let g:UltiSnipsExpandTrigger="<TAB>"
+    let g:UltiSnipsExpandTrigger="<C-c>"
     let g:UltiSnipsJumpForwardTrigger="<TAB>"
-    let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+    let g:UltiSnipsJumpBackwardTrigger="<C-TAB>"
     let g:UltiSnipsSnippetDirectories = [$VIM_PATH.'/ultisnips']
     let g:UltiSnipsEditSplit="vertical"
 
