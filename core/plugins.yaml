@@ -1,0 +1,90 @@
+# PackageManage{{{
+- repo: Shougo/dein.vim
+  on_func: dein#
+# }}}
+
+- repo: hardcoreplayers/spaceline.vim
+  on_event: [ BufReadPre,BufNew ]
+  hook_source:
+    let g:spaceline_seperate_style= 'slant-cons'
+
+- repo: ryanoasis/vim-devicons
+
+- repo: neoclide/coc.nvim
+  merge: 0
+  rev: release
+
+- repo: liuchengxu/vim-which-key
+  on_cmd: [ Whichkey, Whichkey! ]
+  hook_add: |
+    let g:which_key_map = { 'name':'Leader'}
+    let g:which_key_localmap = { 'name':'LocalLeader'}
+  hook_post_source: |
+    function! s:register_whichkey()
+      let s:leader_key=substitute(get(g:,"mapleader","\\"), ' ', '<Space>', '')
+      let s:localleader_key= get(g:,'maplocalleader',';')
+      call which_key#register(s:leader_key, 'g:which_key_map')
+      call which_key#register(s:localleader_key, 'g:which_key_localmap')
+      endfunction
+    call s:register_whichkey()
+
+- repo: junegunn/vim-easy-align
+  on_ft: [vim,json,go,html,js,jsx,py,css,less,tmpl,toml,xml,sql,Dockerfile]
+
+- repo: SirVer/ultisnips
+  hook_add: |
+    let g:UltiSnipsExpandTrigger="<TAB>"
+    let g:UltiSnipsJumpForwardTrigger="<TAB>"
+    let g:UltiSnipsJumpBackwardTrigger="<S-TAB>"
+    let g:UltiSnipsSnippetDirectories = [$VIM_PATH.'/ultisnips']
+    let g:UltiSnipsEditSplit="vertical"
+
+- repo: honza/vim-snippets
+
+- repo: Shougo/defx.nvim
+  on_cmd: Defx
+  hook_source: source $VIM_PATH/modules/module-defx.vim
+
+- repo: kristijanhusak/defx-git
+  on_source: defx.nvim
+  hook_source: |
+    let g:defx_git#indicators = {
+      \ 'Modified'  : '•',
+      \ 'Staged'    : '✚',
+      \ 'Untracked' : 'ᵁ',
+      \ 'Renamed'   : '≫',
+      \ 'Unmerged'  : '≠',
+      \ 'Ignored'   : 'ⁱ',
+      \ 'Deleted'   : '✖',
+      \ 'Unknown'   : '⁇'
+      \ }
+
+- repo: kristijanhusak/defx-icons
+  on_source: defx.nvim
+  hook_source: |
+    let g:defx_icons_column_length = 1
+    let g:defx_icons_mark_icon = ''
+
+- repo: voldikss/vim-floaterm
+  on_cmd: [ FloatermNew,FloatermToggle,FloatermPrev,FloatermNext,FloatermSend ]
+  hook_source: source $VIM_PATH/modules/module-floaterm.vim
+
+
+- repo: liuchengxu/vim-clap
+  build: 'bash install.sh'
+  on_cmd: Clap
+  hook_add: source $VIM_PATH/modules/module-clap.vim
+
+- repo: hardcoreplayers/vim-buffet
+
+- repo: luochen1990/rainbow
+  on_event: BufRead
+  hook_add: let g:rainbow_active = 1
+
+- repo: tyru/caw.vim
+
+
+- repo: roxma/nvim-yarp
+
+- repo: roxma/vim-hug-neovim-rpc
+
