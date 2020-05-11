@@ -17,6 +17,8 @@
   hook_add: source $VIM_PATH/modules/module-coc.vim
   hook_source: source $VIM_PATH/modules/module-lsp.vim
 
+- repo: vn-ki/coc-clap
+  on_source: vim-clap
 
 - repo: liuchengxu/vim-which-key
   on_cmd: [ Whichkey, Whichkey! ]

@@ -37,4 +37,3 @@ nnoremap <LEADER>sv :source $MYVIMRC<cr>
 " === load leaderkey 插件的键位映射
 " ===
 source $VIM_PATH/leaderkey.vim
-
