@@ -71,8 +71,8 @@
 
 
 - repo: liuchengxu/vim-clap
-  build: 'bash install.sh'
   on_cmd: Clap
+  build: 'bash install.sh'
   hook_add: source $VIM_PATH/modules/module-clap.vim
 
 - repo: hardcoreplayers/vim-buffet
