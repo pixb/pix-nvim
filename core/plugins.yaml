@@ -51,6 +51,7 @@
     let g:UltiSnipsSnippetDirectories = [$VIM_PATH.'/ultisnips']
     let g:UltiSnipsEditSplit="vertical"
 
+# 代码片段库
 - repo: honza/vim-snippets
 
 # 文件导航
