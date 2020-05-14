@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/etc/lightdm/lightdm.conf.d'
 let g:netrw_dirhist_3='/home/pix/.cache/dein/repos/github.com/liuchengxu/vim-clap/autoload/clap'
 let g:netrw_dirhist_2='/home/pix/.config/nvim/core'
 let g:netrw_dirhist_1='/home/pix/Downloads'

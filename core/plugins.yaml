@@ -53,6 +53,7 @@
 
 # 代码片段库
 - repo: honza/vim-snippets
+  depends: coc.nvim
 
 # 文件导航
 - repo: Shougo/defx.nvim
